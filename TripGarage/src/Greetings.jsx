@@ -5,8 +5,17 @@ import './App.css'
 
 function Greetings() {
   const [count, setCount] = useState(0)
-
-  return <h1>&quot; I swear by my pretty floral bonnet, I will end you.&quot;</h1>;
+  
+  return (
+    <>
+      <div className="container">
+        <svg>
+          <circle cx="25" cy="75" r="20" stroke="green" strokeWidth="2" />
+        </svg>
+      </div>
+      <h1>Hello World!</h1>
+    </>
+  );
 }
 
 export default Greetings
