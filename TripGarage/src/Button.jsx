@@ -3,23 +3,27 @@ import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import './App.css'
 
-function Button(props) {
+function Button({ text = "Click Me!", color = "blue", fontSize = 12, handleClick }) {
   const buttonStyle = {
-    color: props.color,
-    fontSize: props.fontSize + 'px'
+    color: color,
+    fontSize: fontSize + "px"
   };
 
   return (
-    <button style={buttonStyle}>{props.text}</button>
+    <button onClick={handleClick} style={buttonStyle}>
+      {text}
+    </button>
   );
 }
 
 export default function App() {
+  const handleButtonClick = () => {
+    window.location.href = "http://www.google.com";
+  };
+
   return (
     <div>
-      <Button text="Click Me!" color="blue" fontSize={12} />
-      <Button text="Don't Click Me!" color="red" fontSize={12} />
-      <Button text="Click Me!" color="blue" fontSize={10} />
+      <Button handleClick={handleButtonClick} />
     </div>
   );
 }
